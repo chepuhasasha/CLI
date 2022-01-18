@@ -1,0 +1,29 @@
+{
+  "name": "cashcow_cli",
+  "version": "1.0.0",
+  "author": "Sergey Batukov",
+  "description": "CLI template",
+  "license": "MIT",
+  "homepage": "https://github.com/sashachepuha/CLI#readme",
+  "main": "cashcow.js",
+  "bin": {
+    "cashcow": "cashcow.js"
+  },
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sashachepuha/CLI.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sashachepuha/CLI/issues"
+  },
+  "dependencies": {
+    "axios": "^0.25.0",
+    "chalk": "^5.0.0",
+    "qs": "^6.10.3"
+  }
+}
