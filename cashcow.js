@@ -19,7 +19,7 @@ const questions = [
   {
     type: "number",
     name: "time",
-    message: "UPDATE TIME:",
+    message: "UPDATE TIME (sec.):",
   },
   {
     type: "password",
@@ -92,5 +92,5 @@ const init = ({ pair, limit, time }) => {
   getCourse(pair, limit);
   setInterval(() => {
     getCourse(pair, limit);
-  }, time * 60);
+  }, time * 1000);
 };

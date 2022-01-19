@@ -1,6 +1,6 @@
 {
-  "pair": "USD_RUB",
-  "limit": 10,
-  "time": 100,
-  "token": "1"
+  "pair": "BTC_USD",
+  "limit": 30,
+  "time": 2,
+  "token": "jjjj"
 }

@@ -1,4 +1,5 @@
 import axios from "axios";
+import chalk from "chalk";
 import qs from "qs";
 import cnsl from "./log.service.js";
 
@@ -10,7 +11,9 @@ const getCourse = async function (pair, limit) {
     data: qs.stringify(data),
     url: "https://api.exmo.com/v1/trades",
   };
-  console.log("waiting for server response...");
+  console.log(
+    chalk.bgMagentaBright(chalk.black(" waiting for server response..."))
+  );
   await axios(options)
     .then(function (response) {
       console.log("\x1Bc");

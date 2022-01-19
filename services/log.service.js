@@ -1,7 +1,6 @@
 import chalk from "chalk";
 
 const coursePrint = ({ pair, up, volumes, price }) => {
-  console.log(chalk.grey("―――――――――――――――――――"));
   if (up) {
     console.log(
       `\n${chalk.greenBright(" ↑")} ${chalk.bgGreenBright(
