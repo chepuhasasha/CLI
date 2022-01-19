@@ -51,6 +51,7 @@ fs.readFile("config.json", "utf8", (err, data) => {
       if (answer.load == "Yes") {
         config = JSON.parse(data);
         cnsl.configPrint(config);
+        init(config);
       } else {
         initSelect();
       }
@@ -70,7 +71,15 @@ const initSelect = () => {
           cnsl.configPrint(config);
           inquirer.prompt(questions[4]).then((answer) => {
             if (answer.config == "Yes") {
-              fs.writeFileSync("config.json", JSON.stringify(config, null, 2));
+              fs.writeFile(
+                "config.json",
+                JSON.stringify(config, null, 2),
+                () => {
+                  init(config);
+                }
+              );
+            } else {
+              init(config);
             }
           });
         });
@@ -79,9 +88,9 @@ const initSelect = () => {
   });
 };
 
-const initCLI = () => {
-  getCourse("BTC_USD", 40);
+const init = ({ pair, limit, time }) => {
+  getCourse(pair, limit);
   setInterval(() => {
-    getCourse("BTC_USD", 50);
-  }, 1000 * 60);
+    getCourse(pair, limit);
+  }, time * 60);
 };
